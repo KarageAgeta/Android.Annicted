@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat
 import io.github.karageageta.annicted.R
 import io.github.karageageta.annicted.helper.MainTab
 import io.github.karageageta.annicted.ui.home.HomeFragment
+import io.github.karageageta.annicted.ui.mypage.MyPageFragment
 
 class MainTabPagerAdapter(
         fragmentManager: FragmentManager,
@@ -26,7 +27,7 @@ class MainTabPagerAdapter(
                 HomeFragment.newInstance()
             }
             MainTab.MY_PAGE -> {
-                HomeFragment.newInstance()
+                MyPageFragment.newInstance()
             }
         }
     }
