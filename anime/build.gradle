@@ -1,11 +1,9 @@
-apply plugin: 'com.android.feature'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    baseFeature true
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -20,13 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    api "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    application project(':app')
-    compile project(path: ':anime')
 
     // Kotlin
     implementation rootProject.ext.kotlin
@@ -35,8 +31,6 @@ dependencies {
     implementation rootProject.ext.supportCompat
     implementation rootProject.ext.supportDesign
     implementation rootProject.ext.supportConstraint
-    // Glide
-    implementation rootProject.ext.glide
     // Dagger
     implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerCompiler
@@ -54,6 +48,7 @@ dependencies {
     implementation rootProject.ext.retrofitConverter
     // Timber
     implementation rootProject.ext.timber
+
     // Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
