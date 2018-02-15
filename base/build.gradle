@@ -1,0 +1,59 @@
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    baseFeature true
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    application project(':app')
+
+    // Kotlin
+    implementation rootProject.ext.kotlin
+    // Android Support
+    implementation rootProject.ext.support
+    implementation rootProject.ext.supportCompat
+    implementation rootProject.ext.supportDesign
+    implementation rootProject.ext.supportConstraint
+    // Glide
+    implementation rootProject.ext.glide
+    // Dagger
+    implementation rootProject.ext.dagger
+    kapt rootProject.ext.daggerCompiler
+    // Rx
+    implementation rootProject.ext.rxKotlin
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
+    // RxLifecycle
+    implementation rootProject.ext.rxLifecycle
+    implementation rootProject.ext.rxLifecycleComponents
+    implementation rootProject.ext.rxLifecycleKotlin
+    // Retrofit
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.retrofitAdapter
+    implementation rootProject.ext.retrofitConverter
+    // Timber
+    implementation rootProject.ext.timber
+    // Test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

@@ -1,0 +1,55 @@
+ext {
+    compileSdkVersion = 27
+    buildToolsVersion = "27.0.2"
+    minSdkVersion = 21
+    instantAppMinSdkVersion = 23
+    targetSdkVersion = 27
+
+    // Kotlin
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+
+    // Android Support
+    supportVersion = '27.0.2'
+    supportConstraintLayoutVersion = '1.0.2'
+    support = "com.android.support:support-v4:$supportVersion"
+    supportCompat = "com.android.support:appcompat-v7:$supportVersion"
+    supportDesign = "com.android.support:design:$supportVersion"
+    supportConstraint = "com.android.support.constraint:constraint-layout:$supportConstraintLayoutVersion"
+
+    // instant apps
+    instantAppsVersion = '1.1.0'
+    instantApps = "com.google.android.instantapps:instantapps:$instantAppsVersion"
+
+    // Glide
+    glideVersion = '4.0.0-RC1'
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+
+    // Dagger
+    daggerVersion = '2.12'
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    // Rx
+    rxKotlinVersion = '2.2.0'
+    rxKotlin = "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    rxAndroidVersion = '2.0.1'
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    rxJavaVersion = '2.1.0'
+    rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    // RxLifecycle
+    rxLifecycleVersion = '2.1.0'
+    rxLifecycle = "com.trello.rxlifecycle2:rxlifecycle:$rxLifecycleVersion"
+    rxLifecycleComponents = "com.trello.rxlifecycle2:rxlifecycle-components:$rxLifecycleVersion"
+    rxLifecycleKotlin = "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxLifecycleVersion"
+
+    // Retrofit
+    retrofitVersion = '2.3.0'
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitAdapter = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    retrofitConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // Timber
+    timberVersion = '4.6.0'
+    timber = "com.jakewharton.timber:timber:$timberVersion"
+}
