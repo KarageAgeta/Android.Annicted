@@ -1,6 +1,6 @@
-package io.github.karageageta.annicted.anime.network.response
+package io.github.karageageta.annicted.network.response
 
-import io.github.karageageta.annicted.anime.model.Work
+import io.github.karageageta.annicted.model.Work
 
 data class WorkResponse(
         val totalCount: Int = 0,

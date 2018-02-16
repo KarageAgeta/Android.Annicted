@@ -52,6 +52,10 @@ ext {
     retrofitAdapter = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
     retrofitConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
+    // OkHttp
+    okHttpVersion = '3.9.1'
+    okHttpLogging = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
     // Timber
     timberVersion = '4.6.0'
     timber = "com.jakewharton.timber:timber:$timberVersion"

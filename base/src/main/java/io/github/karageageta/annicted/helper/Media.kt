@@ -1,4 +1,4 @@
-package io.github.karageageta.annicted.anime.helper
+package io.github.karageageta.annicted.helper
 
 enum class Media {
     TV,

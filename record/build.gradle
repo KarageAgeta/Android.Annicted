@@ -25,7 +25,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':base')
-    implementation project(path: ':anime')
 
     // Kotlin
     implementation rootProject.ext.kotlin

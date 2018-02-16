@@ -1,4 +1,4 @@
-package io.github.karageageta.annicted.anime.model
+package io.github.karageageta.annicted.model
 
 data class Work(
         val id: Int = 0,

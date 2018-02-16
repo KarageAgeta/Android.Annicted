@@ -1,6 +1,6 @@
-package io.github.karageageta.annicted.anime.network
+package io.github.karageageta.annicted.network
 
-import io.github.karageageta.annicted.anime.network.response.WorkResponse
+import io.github.karageageta.annicted.network.response.WorkResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 
