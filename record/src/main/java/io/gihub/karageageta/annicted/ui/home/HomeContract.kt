@@ -5,5 +5,7 @@ import io.github.karageageta.annicted.BaseContract
 interface HomeContract {
     interface View : BaseContract.View
 
-    interface Presenter: BaseContract.Presenter
+    interface Presenter: BaseContract.Presenter {
+        fun resume()
+    }
 }
