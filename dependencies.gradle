@@ -27,7 +27,10 @@ ext {
     // Dagger
     daggerVersion = '2.12'
     dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
+    daggerAndroidSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     // Rx
     rxKotlinVersion = '2.2.0'
