@@ -15,6 +15,7 @@ ext {
     supportCompat = "com.android.support:appcompat-v7:$supportVersion"
     supportDesign = "com.android.support:design:$supportVersion"
     supportConstraint = "com.android.support.constraint:constraint-layout:$supportConstraintLayoutVersion"
+    supportRecycler = "com.android.support:recyclerview-v7:$supportVersion"
 
     // instant apps
     instantAppsVersion = '1.1.0'

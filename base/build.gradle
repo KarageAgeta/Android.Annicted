@@ -35,8 +35,8 @@ dependencies {
     api "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     application project(':app')
-    feature project(":main")
-    feature project(":record")
+    feature project(':main')
+    feature project(':record')
 
     // Kotlin
     implementation rootProject.ext.kotlin

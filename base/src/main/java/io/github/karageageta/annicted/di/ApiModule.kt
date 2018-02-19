@@ -1,5 +1,6 @@
 package io.github.karageageta.annicted.di
 
+import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -18,34 +19,30 @@ import javax.inject.Singleton
 class ApiModule {
     @Provides
     @Singleton
-    fun provideGson(): Gson {
-        val gsonBuilder = GsonBuilder()
-        return gsonBuilder.create()
-    }
+    fun provideGson(): Gson =
+            GsonBuilder()
+                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                    .create()
 
     @Provides
     @Singleton
-    fun provideOkhttpClient(): OkHttpClient {
-        val client = OkHttpClient.Builder()
-        client.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-        return client.build()
-    }
+    fun provideOkhttpClient(): OkHttpClient =
+            OkHttpClient.Builder()
+                    .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                    .build()
 
     @Provides
     @Singleton
-    fun provideApplicationConfig(): ApplicationConfig {
-        return ApplicationConfig()
-    }
+    fun provideApplicationConfig(): ApplicationConfig = ApplicationConfig()
 
     @Provides
     @Singleton
-    internal fun provideApiService(config: ApplicationConfig, client: OkHttpClient, gson: Gson): ApiService {
-        return Retrofit.Builder()
-                .baseUrl(config.apiUrl)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build()
-                .create(ApiService::class.java)
-    }
+    internal fun provideApiService(config: ApplicationConfig, client: OkHttpClient, gson: Gson): ApiService =
+            Retrofit.Builder()
+                    .baseUrl(config.apiUrl)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build()
+                    .create(ApiService::class.java)
 }
