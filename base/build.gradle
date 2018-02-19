@@ -14,7 +14,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
     buildTypes {
+        debug {
+            buildConfigField "String", "ANNICT_ACCESS_TOKEN", properties.getProperty("ANNICT_ACCESS_TOKEN")
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
