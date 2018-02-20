@@ -22,5 +22,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':base')
     implementation project(':main')
-    implementation project(':record')
+    implementation project(':watch')
 }

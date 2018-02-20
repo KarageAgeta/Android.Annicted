@@ -23,7 +23,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':base')
-    implementation project(':record')
+    implementation project(':watch')
 
     // Kotlin
     implementation rootProject.ext.kotlin

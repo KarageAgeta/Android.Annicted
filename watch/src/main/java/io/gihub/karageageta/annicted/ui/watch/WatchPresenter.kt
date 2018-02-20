@@ -1,21 +1,21 @@
-package io.gihub.karageageta.annicted.ui.home
+package io.gihub.karageageta.annicted.ui.watch
 
 import android.annotation.SuppressLint
 import android.content.Context
 import io.github.karageageta.annicted.network.ApiManager
 import timber.log.Timber
 
-class HomePresenter(
-        private val view: HomeContract.View,
+class WatchPresenter(
+        private val view: WatchContract.View,
         private val context: Context,
         private val apiManager: ApiManager
-) : HomeContract.Presenter {
+) : WatchContract.Presenter {
     @SuppressLint("CheckResult")
     override fun resume() {
         // TODO : Delete (Debug)
         apiManager.getMyWorks()
                 .subscribe({
-                    it.works.forEach { Timber.d(it.toString()) }
+                    view.addWorks(it.works)
                 }, {
                     Timber.d(it)
                 })

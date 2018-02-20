@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.content.ContextCompat
 import io.github.karageageta.annicted.R
 import io.gihub.karageageta.annicted.helper.MainTab
-import io.gihub.karageageta.annicted.ui.home.HomeFragment
+import io.gihub.karageageta.annicted.ui.watch.WatchFragment
 
 class MainTabPagerAdapter(
         fragmentManager: FragmentManager,
@@ -20,15 +20,15 @@ class MainTabPagerAdapter(
         val tab = MainTab.values()[position]
         return when (tab) {
             MainTab.HOME -> {
-                // HomeFragment.newInstance()
-                HomeFragment.newInstance()
+                // WatchFragment.newInstance()
+                WatchFragment.newInstance()
             }
             MainTab.SEARCH -> {
-                // HomeFragment.newInstance()
-                HomeFragment.newInstance()
+                // WatchFragment.newInstance()
+                WatchFragment.newInstance()
             }
             MainTab.MY_PAGE -> {
-                HomeFragment.newInstance()
+                WatchFragment.newInstance()
             }
         }
     }

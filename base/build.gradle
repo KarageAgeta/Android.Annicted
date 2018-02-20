@@ -36,10 +36,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     application project(':app')
     feature project(':main')
-    feature project(':record')
+    feature project(':watch')
 
     // Kotlin
     implementation rootProject.ext.kotlin
+    // Android Support
+    implementation rootProject.ext.support
+    implementation rootProject.ext.supportRecycler
     // Dagger
     implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerCompiler

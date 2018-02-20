@@ -33,6 +33,7 @@ dependencies {
     implementation rootProject.ext.supportCompat
     implementation rootProject.ext.supportDesign
     implementation rootProject.ext.supportConstraint
+    implementation rootProject.ext.supportRecycler
     // Glide
     implementation rootProject.ext.glide
     // Dagger
