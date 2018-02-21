@@ -1,10 +1,11 @@
 package io.github.karageageta.annicted.di
 
 import android.content.Context
+import io.github.karageageta.network.ApiService
+import io.github.karageageta.network.di.ApiModule
 import dagger.BindsInstance
 import dagger.Component
 import io.github.karageageta.annicted.AnnictedApplication
-import io.github.karageageta.annicted.network.ApiService
 import javax.inject.Singleton
 
 @Singleton

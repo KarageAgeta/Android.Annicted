@@ -1,7 +1,7 @@
-package io.github.karageageta.annicted.network.response
+package io.github.karageageta.network.model.response
 
-import io.github.karageageta.annicted.model.Status
-import io.github.karageageta.annicted.model.Work
+import io.github.karageageta.network.model.data.Status
+import io.github.karageageta.network.model.data.Work
 
 data class WorkResponse(
         val totalCount: Int = 0,

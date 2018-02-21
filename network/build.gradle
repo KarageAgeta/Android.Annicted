@@ -1,11 +1,9 @@
-apply plugin: 'com.android.feature'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    baseFeature true
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -14,25 +12,22 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
     buildTypes {
+        debug {
+            buildConfigField "String", "ANNICT_ACCESS_TOKEN", properties.getProperty("ANNICT_ACCESS_TOKEN")
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
-kapt {
-    generateStubs = true
-}
 
 dependencies {
-    api "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    application project(':app')
-    feature project(':main')
-    feature project(':watch')
-    compile project(path: ':network')
-
     // Kotlin
     implementation rootProject.ext.kotlin
     // Android Support
@@ -41,6 +36,10 @@ dependencies {
     // Dagger
     implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerCompiler
+    // Rx
+    implementation rootProject.ext.rxKotlin
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
     // Retrofit
     implementation rootProject.ext.retrofit
     implementation rootProject.ext.retrofitAdapter

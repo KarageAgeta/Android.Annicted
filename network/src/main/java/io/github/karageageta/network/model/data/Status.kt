@@ -1,4 +1,4 @@
-package io.github.karageageta.annicted.model
+package io.github.karageageta.network.model.data
 
 data class Status(
         val kind: String = ""

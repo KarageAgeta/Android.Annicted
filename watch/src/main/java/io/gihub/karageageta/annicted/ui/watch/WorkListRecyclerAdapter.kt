@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import io.github.karageageta.annicted.R
 import io.github.karageageta.annicted.helper.RecyclerViewAdapter
-import io.github.karageageta.annicted.model.Work
+import io.github.karageageta.network.model.data.Work
 import kotlinx.android.synthetic.main.item_work.view.*
 
 class WorkListRecyclerAdapter(

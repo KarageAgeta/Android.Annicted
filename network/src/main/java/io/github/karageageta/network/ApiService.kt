@@ -1,7 +1,7 @@
-package io.github.karageageta.annicted.network
+package io.github.karageageta.network
 
-import io.github.karageageta.annicted.BuildConfig
-import io.github.karageageta.annicted.network.response.WorkResponse
+import com.karageageta.network.BuildConfig
+import io.github.karageageta.network.model.response.WorkResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,19 +1,18 @@
-package io.github.karageageta.annicted.di
+package io.github.karageageta.network.di
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import io.github.karageageta.network.ApiService
+import io.github.karageageta.network.NetworkConfig
 import dagger.Module
 import dagger.Provides
-import io.github.karageageta.annicted.ApplicationConfig
-import io.github.karageageta.annicted.network.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
 
 @Module
 class ApiModule {
@@ -33,11 +32,11 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideApplicationConfig(): ApplicationConfig = ApplicationConfig()
+    fun provideNetworkConfig(): NetworkConfig = NetworkConfig()
 
     @Provides
     @Singleton
-    internal fun provideApiService(config: ApplicationConfig, client: OkHttpClient, gson: Gson): ApiService =
+    internal fun provideApiService(config: NetworkConfig, client: OkHttpClient, gson: Gson): ApiService =
             Retrofit.Builder()
                     .baseUrl(config.apiUrl)
                     .client(client)

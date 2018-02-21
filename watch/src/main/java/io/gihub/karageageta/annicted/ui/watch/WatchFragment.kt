@@ -11,7 +11,7 @@ import io.github.karageageta.annicted.AnnictedApplication
 import io.github.karageageta.annicted.R
 import io.github.karageageta.annicted.di.DaggerWatchComponent
 import io.github.karageageta.annicted.di.WatchPresenterModule
-import io.github.karageageta.annicted.model.Work
+import io.github.karageageta.network.model.data.Work
 import kotlinx.android.synthetic.main.fragment_watch.*
 import javax.inject.Inject
 

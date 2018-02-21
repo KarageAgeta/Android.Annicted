@@ -1,7 +1,7 @@
-package io.github.karageageta.annicted.network
+package io.github.karageageta.network
 
 import android.content.Context
-import io.github.karageageta.annicted.network.response.WorkResponse
+import io.github.karageageta.network.model.response.WorkResponse
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

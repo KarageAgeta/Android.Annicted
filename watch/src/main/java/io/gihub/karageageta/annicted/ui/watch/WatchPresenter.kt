@@ -2,7 +2,7 @@ package io.gihub.karageageta.annicted.ui.watch
 
 import android.annotation.SuppressLint
 import android.content.Context
-import io.github.karageageta.annicted.network.ApiManager
+import io.github.karageageta.network.ApiManager
 import timber.log.Timber
 
 class WatchPresenter(

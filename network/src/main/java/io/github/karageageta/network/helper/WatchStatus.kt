@@ -1,4 +1,4 @@
-package io.github.karageageta.annicted.helper
+package io.github.karageageta.network.helper
 
 enum class WatchStatus(val kind: String, kindText: String) {
     WANNA_WATCH("wanna_watch", "見たい"),
