@@ -10,5 +10,6 @@ interface WatchContract {
 
     interface Presenter: BaseContract.Presenter {
         fun resume()
+        fun destroy()
     }
 }

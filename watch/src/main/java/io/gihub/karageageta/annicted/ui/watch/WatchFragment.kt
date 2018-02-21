@@ -53,6 +53,10 @@ class WatchFragment : Fragment(), WatchContract.View {
         presenter.resume()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.destroy()
+    }
     // WatchContract.View
 
     override fun addWorks(work: List<Work>) {
