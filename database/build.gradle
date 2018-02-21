@@ -1,11 +1,10 @@
-apply plugin: 'com.android.feature'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    baseFeature true
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -13,7 +12,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -21,19 +19,13 @@ android {
         }
     }
 }
-kapt {
-    generateStubs = true
+
+realm {
+    syncEnabled = true
 }
 
 dependencies {
-    api "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    application project(':app')
-    feature project(':main')
-    feature project(':watch')
-    compile project(path: ':network')
-    compile project(path: ':database')
-
     // Kotlin
     implementation rootProject.ext.kotlin
     // Android Support
@@ -42,12 +34,10 @@ dependencies {
     // Dagger
     implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerCompiler
-    // Retrofit
-    implementation rootProject.ext.retrofit
-    implementation rootProject.ext.retrofitAdapter
-    implementation rootProject.ext.retrofitConverter
-    // OkHttp
-    implementation rootProject.ext.okHttpLogging
+    // Rx
+    implementation rootProject.ext.rxKotlin
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
     // Timber
     implementation rootProject.ext.timber
     // Test

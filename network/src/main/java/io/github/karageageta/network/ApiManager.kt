@@ -9,12 +9,11 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class ApiManager @Inject constructor(private val service: ApiService, private val context: Context) {
-    fun getMyWorks(): Single<WorkResponse> {
-        return service.getMyWorks()
-                .subscribeOn(Schedulers.newThread())
-                .onErrorResumeNext { Single.error(onError(it)) }
-                .observeOn(AndroidSchedulers.mainThread())
-    }
+    fun getMyWorks(): Single<WorkResponse> =
+            service.getMyWorks()
+                    .subscribeOn(Schedulers.newThread())
+                    .onErrorResumeNext { Single.error(onError(it)) }
+                    .observeOn(AndroidSchedulers.mainThread())
 
     // private
     private fun onError(e: Throwable): Throwable {
