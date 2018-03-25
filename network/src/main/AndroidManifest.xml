@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.karageageta.network" />
+<manifest package="io.github.karageageta.network" />

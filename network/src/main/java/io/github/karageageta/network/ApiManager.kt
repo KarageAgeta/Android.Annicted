@@ -1,6 +1,7 @@
 package io.github.karageageta.network
 
 import android.content.Context
+import io.github.karageageta.network.model.response.CodeResponse
 import io.github.karageageta.network.model.response.MeResponse
 import io.github.karageageta.network.model.response.WorkResponse
 import io.reactivex.Single
@@ -10,6 +11,12 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class ApiManager @Inject constructor(private val service: ApiService, private val context: Context) {
+    fun authorize(): Single<CodeResponse> =
+            service.authorize()
+                    .subscribeOn(Schedulers.newThread())
+                    .onErrorResumeNext { Single.error(onError(it)) }
+                    .observeOn(AndroidSchedulers.mainThread())
+
     fun getMe(): Single<MeResponse> =
             service.getMe()
                     .subscribeOn(Schedulers.newThread())

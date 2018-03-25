@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Annicted</string>
+
+    <string name="title_login">ログイン</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_settings">My Page</string>
+
+    <string name="button_login">ログイン</string>
 </resources>

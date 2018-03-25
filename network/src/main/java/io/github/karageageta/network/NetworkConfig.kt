@@ -1,5 +1,5 @@
 package io.github.karageageta.network
 
 class NetworkConfig {
-    val apiUrl: String = "https://api.annict.com/v1/"
+    val apiUrl: String = "https://api.annict.com/"
 }
